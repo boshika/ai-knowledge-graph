@@ -43,10 +43,6 @@ Advanced Evolutions
 
 
 [[RAGArchitecture]]
-
-[[Step1-Embed-SematicSpace.png]]
-[[Step2-Retrieval-Re-Ranking.png]]
-[[RAG-Pipeline-Algorithms.png]]
-
+[[RAGComponents]]
 
 
