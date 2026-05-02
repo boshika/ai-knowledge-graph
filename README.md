@@ -10,6 +10,8 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 
 ### AI Concepts
 - **RAG** — Retrieval-Augmented Generation
+- **Agentic RAG** — RAG with autonomous agent workflows
+- **GraphRAG** — Graph-based Retrieval-Augmented Generation
 - **Fine-Tuning** — Model fine-tuning techniques
 - **PEFT** — Parameter-Efficient Fine-Tuning
 - **LoRA & QLoRA** — Low-Rank Adaptation methods
@@ -23,6 +25,10 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **SageMaker** — AWS SageMaker
 - **Fine-Tuning** — Cloud-based fine-tuning
 - **LoRA** — LoRA on AWS
+
+### System Design
+- **RAG Architecture** — End-to-end RAG system architecture
+- **RAG Components** — Components, embedding, retrieval & re-ranking, pipeline algorithms
 
 ## Usage
 
