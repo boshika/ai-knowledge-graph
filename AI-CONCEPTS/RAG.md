@@ -1,6 +1,6 @@
 #ai-concepts 
 
-[[RAGArchitecture]]
+[[RAGArchitecture.png]]
 [[AgenticRAG]]
 [[GraphRAG]]
 
