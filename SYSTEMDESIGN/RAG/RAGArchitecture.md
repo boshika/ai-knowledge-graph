@@ -1,6 +1,6 @@
 # RAG Architecture
 
-![[RAGArchitecture.png]]
+![[SVG/RAGArchitecture.png]]
 
 ## Related
 - [[RAG]]

@@ -22,47 +22,21 @@
             }
           },
           {
-            "id": "57dc8662cd4e1023",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI-CONCEPTS/RAG.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "RAG"
-            }
-          },
-          {
-            "id": "5d161c34efd58efe",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI-CONCEPTS/RAG.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "RAG"
-            }
-          },
-          {
             "id": "c20bd39bb51f8659",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "SYSTEMDESIGN/RAG/RAGArchitecture.md"
+                "file": "SYSTEMDESIGN/RAG/RAGComponents.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "RAGArchitecture"
+              "icon": "lucide-file",
+              "title": "RAGComponents"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -197,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SYSTEMDESIGN/RAG/RAGArchitecture.md",
+                "file": "SYSTEMDESIGN/RAG/RAGComponents.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of RAGArchitecture"
+              "title": "Outline of RAGComponents"
             }
           },
           {
@@ -238,18 +212,23 @@
   },
   "active": "c20bd39bb51f8659",
   "lastOpenFiles": [
-    "AI-CONCEPTS/RAG.md",
     "SYSTEMDESIGN/RAG/RAGArchitecture.md",
-    "SYSTEMDESIGN/RAG/RAG-Pipeline-Algorithms.png",
+    "SYSTEMDESIGN/RAG/RAGComponents.md",
     "SYSTEMDESIGN/RAG/Step2-Retrieval-Re-Ranking.png",
     "SYSTEMDESIGN/RAG/Step1-Embed-SematicSpace.png",
     "SYSTEMDESIGN/RAG/RAGComponents.png",
-    "SYSTEMDESIGN/RAG",
-    "Graph/graph.png",
-    "Graph/graph.png",
+    "SYSTEMDESIGN/RAG/RAGArchitecture.png",
+    "SYSTEMDESIGN/RAG/RAG-Pipeline-Algorithms.png",
+    "SYSTEMDESIGN/RAG/RAG-Pipeline-Algorithms.md",
+    "README.md",
+    "SYSTEMDESIGN/RAG/Step2-Retrieval-Re-Ranking.md",
+    "SYSTEMDESIGN/RAG/Step1-Embed-SemanticSpace.md",
+    "AI-CONCEPTS/RAG.md",
     "AI-CONCEPTS/AgenticRAG.md",
     "AI-CONCEPTS/GraphRAG.md",
-    "README.md",
+    "Graph/graph.png",
+    "SYSTEMDESIGN/RAG/RAGArchitecture.png.md",
+    "SYSTEMDESIGN/RAG",
     "Graph",
     "AI-CONCEPTS/PEFT.md",
     "AI-CONCEPTS/LoRA and QLoRA.md",
