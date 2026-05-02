@@ -35,13 +35,13 @@ mid-concept  ^duXtx8LZ
 Source: https://www.youtube.com/watch?v=sVcwVQRHIc8 ^UE72zse0
 
 ## Embedded Files
-24b77c53a2accb87451191c458004379f6a8ea62: [[Screenshot 2026-05-02 at 10.00.11 AM.png]]
+24b77c53a2accb87451191c458004379f6a8ea62: [[RAGComponents.png]]
 
-773fbc7a2aa90010d939a761781645497746de08: [[Screenshot 2026-05-02 at 10.07.59 AM.png]]
+773fbc7a2aa90010d939a761781645497746de08: [[Step1-Embed-SematicSpace.png]]
 
-e816203b2f85a01b4e477553cf84c183ac31fa13: [[Screenshot 2026-05-02 at 10.13.20 AM.png]]
+e816203b2f85a01b4e477553cf84c183ac31fa13: [[Step2-Retrieval-Re-Ranking.png]]
 
-6fb0ac3573959f6e3add9ab586ecdfe1b974c0e0: [[Screenshot 2026-05-02 at 10.22.30 AM.png]]
+6fb0ac3573959f6e3add9ab586ecdfe1b974c0e0: [[RAG-Pipeline-Algorithms.png]]
 
 %%
 ## Drawing

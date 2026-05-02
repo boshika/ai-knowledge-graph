@@ -13,15 +13,56 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI-CONCEPTS/RAG vs FINE-TUNING vs PROMPT ENGINEERING.md",
+                "file": "AI-CONCEPTS/LoRA and QLoRA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RAG vs FINE-TUNING vs PROMPT ENGINEERING"
+              "title": "LoRA and QLoRA"
+            }
+          },
+          {
+            "id": "57dc8662cd4e1023",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AI-CONCEPTS/RAG.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RAG"
+            }
+          },
+          {
+            "id": "5d161c34efd58efe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AI-CONCEPTS/RAG.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RAG"
+            }
+          },
+          {
+            "id": "c20bd39bb51f8659",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "SYSTEMDESIGN/RAG/RAGArchitecture.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "RAGArchitecture"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -156,17 +197,27 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AI-CONCEPTS/RAG vs FINE-TUNING vs PROMPT ENGINEERING.md",
+                "file": "SYSTEMDESIGN/RAG/RAGArchitecture.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of RAG vs FINE-TUNING vs PROMPT ENGINEERING"
+              "title": "Outline of RAGArchitecture"
+            }
+          },
+          {
+            "id": "a9fd03b0c1d916bb",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw-sidepanel",
+              "state": {},
+              "icon": "excalidraw-icon",
+              "title": "Excalidraw Sidepanel"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -185,12 +236,27 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "45b084b39016b9e4",
+  "active": "c20bd39bb51f8659",
   "lastOpenFiles": [
-    "AI-CONCEPTS/PROMPT ENGINEERING.md",
-    "AI-CONCEPTS/RAG vs FINE-TUNING vs PROMPT ENGINEERING.md",
     "AI-CONCEPTS/RAG.md",
+    "SYSTEMDESIGN/RAG/RAGArchitecture.md",
+    "SYSTEMDESIGN/RAG/RAG-Pipeline-Algorithms.png",
+    "SYSTEMDESIGN/RAG/Step2-Retrieval-Re-Ranking.png",
+    "SYSTEMDESIGN/RAG/Step1-Embed-SematicSpace.png",
+    "SYSTEMDESIGN/RAG/RAGComponents.png",
+    "SYSTEMDESIGN/RAG",
+    "Graph/graph.png",
+    "Graph/graph.png",
+    "AI-CONCEPTS/AgenticRAG.md",
+    "AI-CONCEPTS/GraphRAG.md",
+    "README.md",
+    "Graph",
+    "AI-CONCEPTS/PEFT.md",
+    "AI-CONCEPTS/LoRA and QLoRA.md",
+    "SYSTEMDESIGN",
     "AI-CONCEPTS/FINE-TUINING.md",
+    "AI-CONCEPTS/RAG vs FINE-TUNING vs PROMPT ENGINEERING.md",
+    "AI-CONCEPTS/PROMPT ENGINEERING.md",
     "CLOUD-CONCEPTS/FINE-TUNING.md",
     "AI-CONCEPTS",
     "CLOUD-CONCEPTS",
