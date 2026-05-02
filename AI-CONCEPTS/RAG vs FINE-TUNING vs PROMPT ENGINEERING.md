@@ -1,6 +1,6 @@
 #ai-concepts
 
-[[RAG]]
+[[AI-CONCEPTS/RAG]]
 [[FINE-TUINING]]
 [[PROMPT ENGINEERING]]
 
