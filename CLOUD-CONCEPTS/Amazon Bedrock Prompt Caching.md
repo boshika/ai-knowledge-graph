@@ -8,7 +8,7 @@ Configuration Steps
 4. **Manage Dynamic Content:** Place all unique user queries _after_ the final checkpoint. Bedrock will then use the cached tokens for the prefix, reducing latency and cutting costs by up to **90%** for that portion of the request.
 
 How does prompt caching affect overall application latency?
-Prompt caching significantly reduces overall application latency by avoiding the re-tokenization and recomputation of static prompt components.
+**Prompt caching significantly reduces overall application latency by avoiding the re-tokenization and recomputation of static prompt components.**
 
 **Impact on Latency**
 
@@ -19,3 +19,21 @@ Prompt caching significantly reduces overall application latency by avoiding the
 **Operational Note The cache has a **5-minute TTL** that resets with each hit, and it requires a minimum number of tokens (typically 1,024 to 4,096 depending on the model) to be effective.
 
 **Operational Note:** The cache has a **5-minute TTL** that resets with each successful hit, making it ideal for high-frequency applications with consistent system instructions
+
+Scenarios and applications where this would be needed?
+Prompt caching is effective when used for static content used over multiple model invocations, it caches and provides repeated context that does not change over time
+
+Examples
+
+Key applications and scenarios include:
+
+- **Document-based Chatbots:** Caching a large uploaded document (like a technical manual or legal policy) so multiple users can ask follow-up questions without the model re-processing the entire file each time.
+- **Complex Few-Shot Prompting:** Caching a library of static examples (few-shot learning) used to guide a model's response format or tone across thousands of independent API calls.
+- **Agentic System Instructions:** Caching the extensive system prompts and tool definitions that define a Bedrock Agent's persona and operational boundaries.
+- **Coding Assistants:** Powering high-frequency developer tools, such as Claude Code, which require a persistent context of the codebase and project rules.
+- **Multi-turn Conversations:** Speeding up response times in long chat sessions by caching the earlier, unchanging parts of the conversation history.
+
+Essentially, any application where a significant portion of the input tokens (often 75% or more) is identical across requests is a prime candidate for caching.
+
+
+
