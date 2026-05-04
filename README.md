@@ -12,6 +12,10 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **RAG** — Retrieval-Augmented Generation
 - **Agentic RAG** — RAG with autonomous agent workflows
 - **GraphRAG** — Graph-based Retrieval-Augmented Generation
+- **RAG Evals** — Evaluating RAG pipelines
+- **Embeddings** — Vector embeddings and semantic representation
+- **Vector Database** — Vector storage and similarity search
+- **Knowledge Bases** — Knowledge base construction and management
 - **Fine-Tuning** — Model fine-tuning techniques
 - **PEFT** — Parameter-Efficient Fine-Tuning
 - **LoRA & QLoRA** — Low-Rank Adaptation methods

@@ -14,8 +14,8 @@ The process begins with the ingestion of raw source documents, such as PDFs, dat
 
 This layer transforms unstructured text into a format that a machine can search mathematically.
 
-- **Embeddings:** Each text chunk is converted into a numerical representation called a **vector embedding** using an embedding model. These vectors capture the semantic meaning; chunks with similar meanings are positioned closer together in a high-dimensional mathematical space.
-- **Vector Database:** These embeddings are stored in a specialized **vector database** (e.g., Pinecone, Weaviate, Milvus, or Qdrant).
+- **[[Embeddings]]:** Each text chunk is converted into a numerical representation called a **vector embedding** using an embedding model. These vectors capture the semantic meaning; chunks with similar meanings are positioned closer together in a high-dimensional mathematical space.
+- [[Vector Database]]:These embeddings are stored in a specialized **vector database** (e.g., Pinecone, Weaviate, Milvus, or Qdrant).
 - **Indexing:** The database uses optimized algorithms like **HNSW** (Hierarchical Navigable Small World) to enable sub-millisecond similarity searches across millions of vectors.
 
 3. The Retrieval and Re-ranking Layer
@@ -44,5 +44,7 @@ Advanced Evolutions
 
 [[RAGArchitecture]]
 [[RAGComponents]]
+
+[[RAG EVALS]]
 
 

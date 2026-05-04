@@ -1,0 +1,1 @@
+In Bedrock, RAG vector stores are called Knowledge Bases. Upload data in S3 as an example. 
