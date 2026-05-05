@@ -24,4 +24,4 @@ Feeding raw data, don't need prompts
 Popular technique: [[LoRA]]
 
 Addtional
-[[RAG vs FINE-TUNING vs PROMPT ENGINEERING]]
+[[RAG vs FINE-TUNING vs PROMPT ENGINEERING vs Long Context]]

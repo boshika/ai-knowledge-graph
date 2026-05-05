@@ -1,4 +1,5 @@
 #ai-concepts 
+[[LoRA]]
 
 **Quick comparison:**
 

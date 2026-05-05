@@ -2,6 +2,13 @@
 
 The architecture for **Retrieval-Augmented Generation (RAG)** is a multi-layered system designed to connect large language models (LLMs) to external, verifiable knowledge sources. In production, a standard RAG system consists of four primary moving parts: **Ingestion and Chunking**, **Embedding and Vector Storage**, **Retrieval and Re-ranking**, and **Generation with Context**.
 
+**Retrieval-Augmented Generation (RAG)**
+
+- **Definition:** An "open-book exam" approach that retrieves relevant snippets from a massive knowledge base (like Amazon S3 or OpenSearch) and injects them into the prompt.
+- **Best For:** Scenarios requiring up-to-date or proprietary information from thousands of documents.
+- **Pros:** Significantly reduces hallucinations by grounding answers in verified data; easier to update than fine-tuning (just update the database).
+- **Cons:** Can be sensitive to retrieval quality ("needle in a haystack" problems) and involves complex data ingestion pipelines
+
 1. The Ingestion and Chunking Layer
 
 The process begins with the ingestion of raw source documents, such as PDFs, database records, or web pages.
@@ -36,15 +43,29 @@ The final stage transforms the retrieved information into a natural language res
 - **Citations:** A mature RAG architecture includes a mechanism to provide **citations**, pinpointing the exact source chunks used for the answer to enhance trust.
 - **Evaluation:** Systems are often evaluated using frameworks like **RAGAS**, which measure faithfulness (accuracy to context) and answer relevancy.
 
-Advanced Evolutions
-
-- [[AgenticRAG]]:** Introduces a reasoning layer where an AI agent acts as a gatekeeper, actively validating the quality and relevance of retrieved sources or performing multi-step reasoning to synthesize complex answers.
-- [[GraphRAG]] Navigates explicit relationships between data entities using a **knowledge graph**, which excels at answering queries fragmented across multiple different documents
-
-
 [[RAGArchitecture]]
 [[RAGComponents]]
 
 [[RAG EVALS]]
+
+
+METHODS
+
+| Technique                 | What it does                                                                                                                                                                                                                |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Naive RAG**             | Embed → retrieve → generate, basic pipeline                                                                                                                                                                                 |
+| **Hybrid retrieval**      | Combine dense (vector) + sparse (BM25) search                                                                                                                                                                               |
+| **Re-ranking**            | Cross-encoder scores top-K results for precision                                                                                                                                                                            |
+| **HyDE**                  | Generate a hypothetical answer first, use it as the query                                                                                                                                                                   |
+| **Multi-query retrieval** | Generate multiple query variants to widen recall                                                                                                                                                                            |
+| **Parent-child chunking** | Retrieve small chunks, return larger parent for context                                                                                                                                                                     |
+| **Self-RAG**              | Model decides when to retrieve, reflects on results                                                                                                                                                                         |
+| **RAPTOR**                | Recursive summarisation builds a retrieval tree                                                                                                                                                                             |
+| [[GraphRAG]]              | Knowledge graph + vector search for complex reasoning. Navigates explicit relationships between data entities using a **knowledge graph**, which excels at answering queries fragmented across multiple different documents |
+| [[AgenticRAG]]:           | Introduces a reasoning layer where an AI agent acts as a gatekeeper, actively validating the quality and relevance of retrieved sources or performing multi-step reasoning to synthesize complex answers.                   |
+
+
+
+
 
 
