@@ -29,10 +29,10 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **Bedrock Services** — AWS Bedrock AI services
 - **Amazon Bedrock Prompt Caching** — Prompt caching on AWS Bedrock
 - **Bedrock Data Automation** — Automating data pipelines with Bedrock
+- **Bedrock Fine-Tuning** — Fine-tuning models on AWS Bedrock
 - **Bedrock Guardrails** — Safety and guardrails on AWS Bedrock
 - **Converse API** — Bedrock Converse API
 - **SageMaker** — AWS SageMaker
-- **Fine-Tuning** — Cloud-based fine-tuning on AWS
 
 ### System Design
 - **RAG Architecture** — End-to-end RAG system architecture
