@@ -1,3 +1,6 @@
+#aws-cloud 
+
+
 To configure **Amazon Bedrock Prompt Caching** for system prompts, you define your static instructions as a **cacheable prefix** followed by a **cache checkpoint** to signal where the static content ends and the dynamic content begins
 
 Configuration Steps
