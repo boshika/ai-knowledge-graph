@@ -4,6 +4,8 @@
  [[SAGEMAKER]]
  [[Glue]]
  [[Cloudwatch]]
+ [[Amazon Transcribe]]
+ 
  
  
 	
