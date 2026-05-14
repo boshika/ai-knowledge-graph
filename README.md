@@ -36,6 +36,7 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **SageMaker Data Wrangler** — Data preparation and feature engineering
 - **CloudWatch** — Monitoring and observability on AWS
 - **Glue** — Serverless data integration and ETL on AWS
+- **Amazon Transcribe** — Automatic speech recognition service on AWS
 
 ### System Design
 - **RAG Architecture** — End-to-end RAG system architecture
