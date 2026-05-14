@@ -33,6 +33,9 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **Bedrock Guardrails** — Safety and guardrails on AWS Bedrock
 - **Converse API** — Bedrock Converse API
 - **SageMaker** — AWS SageMaker
+- **SageMaker Data Wrangler** — Data preparation and feature engineering
+- **CloudWatch** — Monitoring and observability on AWS
+- **Glue** — Serverless data integration and ETL on AWS
 
 ### System Design
 - **RAG Architecture** — End-to-end RAG system architecture
