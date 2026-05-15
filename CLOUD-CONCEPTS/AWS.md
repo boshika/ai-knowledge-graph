@@ -5,6 +5,7 @@
  [[Glue]]
  [[Cloudwatch]]
  [[Amazon Transcribe]]
+ [[Amazon Polly]]
  
  
  
