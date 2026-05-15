@@ -23,6 +23,8 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **LoRA & QLoRA** — Low-Rank Adaptation and Quantized LoRA
 - **Prompt Engineering** — Prompting strategies
 - **RAG vs Fine-Tuning vs Prompt Engineering vs Long Context** — Comparison guide
+- **Model Parameters** — Key model parameters and their effects
+- **Temperature** — Temperature and its impact on model output
 
 ### Cloud Concepts
 - **AWS** — Amazon Web Services overview
@@ -37,10 +39,12 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **CloudWatch** — Monitoring and observability on AWS
 - **Glue** — Serverless data integration and ETL on AWS
 - **Amazon Transcribe** — Automatic speech recognition service on AWS
+- **Amazon Polly** — Text-to-speech service on AWS
 
 ### System Design
 - **RAG Architecture** — End-to-end RAG system architecture
 - **RAG Components** — Components, embedding, retrieval & re-ranking, pipeline algorithms
+- **Model Parameters** — Temperature ranges and parameter visualizations
 
 ## Usage
 
