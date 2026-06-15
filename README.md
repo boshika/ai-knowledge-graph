@@ -25,6 +25,8 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **RAG vs Fine-Tuning vs Prompt Engineering vs Long Context** — Comparison guide
 - **Model Parameters** — Key model parameters and their effects
 - **Temperature** — Temperature and its impact on model output
+- **Models** — Overview of AI models and their capabilities
+- **Prompt Evaluations** — Evaluating and scoring prompt quality
 
 ### Cloud Concepts
 - **AWS** — Amazon Web Services overview
@@ -40,11 +42,14 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **Glue** — Serverless data integration and ETL on AWS
 - **Amazon Transcribe** — Automatic speech recognition service on AWS
 - **Amazon Polly** — Text-to-speech service on AWS
+- **Amazon Comprehend** — Natural language processing service on AWS
+- **Amazon OpenSearch** — Search and analytics service on AWS
 
 ### System Design
 - **RAG Architecture** — End-to-end RAG system architecture
 - **RAG Components** — Components, embedding, retrieval & re-ranking, pipeline algorithms
 - **Model Parameters** — Temperature ranges and parameter visualizations
+- **Prompt Evaluations** — Prompt evaluation diagrams
 
 ## Usage
 
