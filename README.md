@@ -22,8 +22,12 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **LoRA** — Low-Rank Adaptation
 - **LoRA & QLoRA** — Low-Rank Adaptation and Quantized LoRA
 - **Prompt Engineering** — Prompting strategies
+- **Chain of Thought (CoT)** — Step-by-step reasoning prompting strategy
+- **ReAct** — Reasoning and Acting prompting framework
 - **RAG vs Fine-Tuning vs Prompt Engineering vs Long Context** — Comparison guide
 - **Model Parameters** — Key model parameters and their effects
+- **Top K** — Top-K sampling for controlling output diversity
+- **Top P** — Nucleus sampling for controlling output randomness
 - **Temperature** — Temperature and its impact on model output
 - **Models** — Overview of AI models and their capabilities
 - **Prompt Evaluations** — Evaluating and scoring prompt quality
@@ -50,6 +54,7 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **RAG Components** — Components, embedding, retrieval & re-ranking, pipeline algorithms
 - **Model Parameters** — Temperature ranges and parameter visualizations
 - **Prompt Evaluations** — Prompt evaluation diagrams
+- **Chain of Thought (CoT)** — CoT prompting diagram
 
 ## Usage
 
