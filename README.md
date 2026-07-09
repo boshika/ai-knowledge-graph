@@ -13,6 +13,7 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **Agentic RAG** — RAG with autonomous agent workflows
 - **GraphRAG** — Graph-based Retrieval-Augmented Generation
 - **RAG Evals** — Evaluating RAG pipelines
+- **Hybrid Retrieval** — Combining sparse and dense retrieval methods
 - **Embeddings** — Vector embeddings and semantic representation
 - **Vector Database** — Vector storage and similarity search
 - **Knowledge Bases** — Knowledge base construction and management
@@ -24,6 +25,7 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **Prompt Engineering** — Prompting strategies
 - **Chain of Thought (CoT)** — Step-by-step reasoning prompting strategy
 - **ReAct** — Reasoning and Acting prompting framework
+- **Prompt Chaining** — Sequential prompt workflows with gate checks
 - **RAG vs Fine-Tuning vs Prompt Engineering vs Long Context** — Comparison guide
 - **Model Parameters** — Key model parameters and their effects
 - **Top K** — Top-K sampling for controlling output diversity
@@ -31,6 +33,10 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **Temperature** — Temperature and its impact on model output
 - **Models** — Overview of AI models and their capabilities
 - **Prompt Evaluations** — Evaluating and scoring prompt quality
+- **AI Agent** — Perception-reasoning-action loop and agent components
+- **Agentic Design Patterns** — Core architectural patterns for agentic systems
+- **Agent Development Kit (ADK)** — Google's code-first framework for building agents
+- **LangChain** — Framework for building LLM-powered applications
 
 ### Cloud Concepts
 - **AWS** — Amazon Web Services overview
