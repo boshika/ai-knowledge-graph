@@ -8,6 +8,7 @@
  [[Amazon Polly]]
  [[Amazon Comprehend]]
  [[Amazon OpenSearch]]
+ [[Amazon EC2]]
  
  
  

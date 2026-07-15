@@ -1,0 +1,471 @@
+<meta charset="utf-8">
+<title>AI Knowledge Graph — Explorer</title>
+<style>
+:root {
+  --bg: #0a0d12;
+  --panel: #10141c;
+  --panel-border: #232a38;
+  --text: #e8eaf0;
+  --text-dim: #7d8494;
+  --line: #333c4e;
+  --ai: #a493f5;
+  --ai-soft: #a493f522;
+  --cloud: #f0a94e;
+  --cloud-soft: #f0a94e22;
+  --sysdesign: #4fc4b8;
+  --sysdesign-soft: #4fc4b822;
+  --cross: #e2557a;
+}
+:root[data-theme="light"] {
+  --bg: #f6f4ee;
+  --panel: #ffffff;
+  --panel-border: #e4ddc9;
+  --text: #1c1e24;
+  --text-dim: #6b6f7a;
+  --line: #d6d0bd;
+  --ai: #6a56c9;
+  --ai-soft: #6a56c914;
+  --cloud: #b06a10;
+  --cloud-soft: #b06a1014;
+  --sysdesign: #197f74;
+  --sysdesign-soft: #197f7414;
+  --cross: #b23359;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f6f4ee;
+    --panel: #ffffff;
+    --panel-border: #e4ddc9;
+    --text: #1c1e24;
+    --text-dim: #6b6f7a;
+    --line: #d6d0bd;
+    --ai: #6a56c9;
+    --ai-soft: #6a56c914;
+    --cloud: #b06a10;
+    --cloud-soft: #b06a1014;
+    --sysdesign: #197f74;
+    --sysdesign-soft: #197f7414;
+    --cross: #b23359;
+  }
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", monospace;
+}
+#page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 28px 80px;
+  position: relative;
+}
+header.hero {
+  margin-bottom: 30px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 0 0 8px 0;
+}
+h1 {
+  font-family: ui-serif, Georgia, "Iowan Old Style", serif;
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0 0 6px 0;
+  text-wrap: balance;
+}
+.sub {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin: 0;
+}
+.stats-row {
+  display: flex;
+  gap: 18px;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.stats-row b { color: var(--text); font-variant-numeric: tabular-nums; }
+.hint {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  margin-top: 14px;
+  padding: 8px 12px;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.category {
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  background: var(--panel);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  font-family: inherit;
+}
+.cat-header:hover { background: var(--ai-soft); }
+.cat-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.cat-name {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.cat-count {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+.cat-chevron {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-dim);
+  transition: transform 0.25s ease;
+}
+.category.open .cat-chevron { transform: rotate(90deg); }
+
+.cat-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s ease;
+  border-top: 1px solid transparent;
+}
+.category.open .cat-body {
+  grid-template-rows: 1fr;
+  border-top: 1px solid var(--panel-border);
+}
+.cat-body-inner { overflow: hidden; }
+.islands {
+  padding: 18px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.island svg { display: block; overflow: visible; }
+
+.node-circle {
+  fill: var(--panel);
+  stroke-width: 1.8;
+  transition: cx 0.35s ease, cy 0.35s ease, r 0.2s ease;
+}
+.node-circle.hub { cursor: pointer; }
+.node-circle.leaf { cursor: default; }
+.node-label {
+  font-size: 12px;
+  transition: x 0.35s ease, y 0.35s ease, opacity 0.2s ease;
+  cursor: default;
+}
+.node-label.hub { cursor: pointer; font-weight: 600; }
+.node-link {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.3;
+  transition: d 0.35s ease, opacity 0.2s ease;
+}
+.node-badge {
+  font-size: 9.5px;
+  fill: var(--bg);
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+  font-weight: 700;
+}
+.node-count-pill circle { transition: cx 0.35s ease, cy 0.35s ease; }
+
+.cross-link {
+  fill: none;
+  stroke: var(--cross);
+  stroke-width: 1.1;
+  stroke-dasharray: 3 3;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.legend-foot {
+  display: flex;
+  gap: 20px;
+  margin-top: 26px;
+  font-size: 11.5px;
+  color: var(--text-dim);
+}
+.legend-foot .item { display: flex; align-items: center; gap: 7px; }
+.legend-foot .dot { width: 9px; height: 9px; border-radius: 50%; }
+.legend-foot .dash { width: 16px; height: 0; border-top: 1.2px dashed var(--cross); opacity: 0.8; }
+
+#crossOverlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+</style>
+
+<div id="page">
+  <header class="hero">
+    <p class="eyebrow">ai-knowledge-graph &middot; obsidian vault</p>
+    <h1>Knowledge Graph Explorer</h1>
+    <p class="sub">36 notes across three categories, linked by [[wikilinks]]. Click a category to expand it, click a hub node to fold its branch.</p>
+    <div class="stats-row" id="statsRow"></div>
+  </header>
+
+  <div id="categories"></div>
+
+  <div class="legend-foot">
+    <span class="item"><span class="dot" style="background:var(--ai)"></span>AI Concepts</span>
+    <span class="item"><span class="dot" style="background:var(--cloud)"></span>Cloud Concepts</span>
+    <span class="item"><span class="dot" style="background:var(--sysdesign)"></span>System Design</span>
+    <span class="item"><span class="dash"></span>cross-category link</span>
+  </div>
+
+  <svg id="crossOverlay"></svg>
+</div>
+
+<script>
+const TREE = {"categories": {"AI Concepts": {"count": 18, "islands": [{"root": "RAG", "parent": {"RAG": null, "AgenticRAG": "RAG", "Embeddings": "RAG", "GraphRAG": "RAG", "RAG EVALS": "RAG", "RAG vs FINE-TUNING vs PROMPT ENGINEERING vs Long Context": "RAG", "Vector Database": "RAG", "Long Context": "RAG vs FINE-TUNING vs PROMPT ENGINEERING vs Long Context", "PROMPT ENGINEERING": "RAG vs FINE-TUNING vs PROMPT ENGINEERING vs Long Context", "Models": "PROMPT ENGINEERING", "Prompt Evaluations": "Models"}, "children": {"RAG": ["AgenticRAG", "Embeddings", "GraphRAG", "RAG EVALS", "RAG vs FINE-TUNING vs PROMPT ENGINEERING vs Long Context", "Vector Database"], "RAG vs FINE-TUNING vs PROMPT ENGINEERING vs Long Context": ["Long Context", "PROMPT ENGINEERING"], "PROMPT ENGINEERING": ["Models"], "Models": ["Prompt Evaluations"]}}, {"root": "FINE-TUINING", "parent": {"FINE-TUINING": null, "PEFT": "FINE-TUINING", "LoRA and QLoRA": "PEFT", "LoRA": "LoRA and QLoRA"}, "children": {"FINE-TUINING": ["PEFT"], "PEFT": ["LoRA and QLoRA"], "LoRA and QLoRA": ["LoRA"]}}, {"root": "Temperature", "parent": {"Temperature": null, "Model Parameters": "Temperature"}, "children": {"Temperature": ["Model Parameters"]}}, {"root": "Knowledge Bases", "parent": {"Knowledge Bases": null}, "children": {}}]}, "Cloud Concepts": {"count": 16, "islands": [{"root": "AWS", "parent": {"AWS": null, "Amazon Comprehend": "AWS", "Amazon EC2": "AWS", "Amazon OpenSearch": "AWS", "Amazon Polly": "AWS", "Amazon Transcribe": "AWS", "BEDROCK SERVICES": "AWS", "Cloudwatch": "AWS", "Glue": "AWS", "SAGEMAKER": "AWS", "Amazon Bedrock Prompt Caching": "BEDROCK SERVICES", "Bedrock Data Automation": "BEDROCK SERVICES", "Bedrock FINE-TUNING": "BEDROCK SERVICES", "Bedrock Guardrails": "BEDROCK SERVICES", "CONVERSE API": "BEDROCK SERVICES", "Sagemaker Data Wrangler": "SAGEMAKER"}, "children": {"AWS": ["Amazon Comprehend", "Amazon EC2", "Amazon OpenSearch", "Amazon Polly", "Amazon Transcribe", "BEDROCK SERVICES", "Cloudwatch", "Glue", "SAGEMAKER"], "BEDROCK SERVICES": ["Amazon Bedrock Prompt Caching", "Bedrock Data Automation", "Bedrock FINE-TUNING", "Bedrock Guardrails", "CONVERSE API"], "SAGEMAKER": ["Sagemaker Data Wrangler"]}}]}, "System Design": {"count": 2, "islands": [{"root": "RAGArchitecture", "parent": {"RAGArchitecture": null, "RAGComponents": "RAGArchitecture"}, "children": {"RAGArchitecture": ["RAGComponents"]}}]}}, "crossEdges": [{"source": "RAG", "target": "RAGArchitecture"}, {"source": "RAG", "target": "RAGComponents"}, {"source": "RAG vs FINE-TUNING vs PROMPT ENGINEERING vs Long Context", "target": "Bedrock FINE-TUNING"}, {"source": "BEDROCK SERVICES", "target": "Knowledge Bases"}, {"source": "Bedrock FINE-TUNING", "target": "FINE-TUINING"}, {"source": "RAGArchitecture", "target": "AgenticRAG"}, {"source": "RAGArchitecture", "target": "GraphRAG"}]};
+
+const CAT_COLOR_VAR = {
+  "AI Concepts": "--ai",
+  "Cloud Concepts": "--cloud",
+  "System Design": "--sysdesign",
+};
+
+const state = {
+  openCategories: new Set(["AI Concepts", "Cloud Concepts", "System Design"]),
+  collapsedHubs: new Set(),
+};
+
+const ROW_H = 30;
+const LEVEL_W = 190;
+const R_ROOT = 9, R_HUB = 7, R_LEAF = 5.5;
+
+function subtreeSize(nodeId, childrenMap) {
+  const kids = childrenMap[nodeId] || [];
+  return kids.reduce((sum, k) => sum + 1 + subtreeSize(k, childrenMap), 0);
+}
+
+function layoutIsland(island) {
+  const { root, parent, children } = island;
+  const positions = {};
+  let rowCursor = 0;
+
+  function place(nodeId, depth) {
+    const kids = (state.collapsedHubs.has(nodeId) ? [] : (children[nodeId] || []));
+    if (kids.length === 0) {
+      positions[nodeId] = { x: depth * LEVEL_W, y: rowCursor * ROW_H, depth, hasChildren: (children[nodeId] || []).length > 0, hiddenCount: (children[nodeId] || []).length > 0 && state.collapsedHubs.has(nodeId) ? subtreeSize(nodeId, children) : 0 };
+      rowCursor += 1;
+      return positions[nodeId].y;
+    }
+    const childYs = kids.map((k) => place(k, depth + 1));
+    const y = childYs.reduce((a, b) => a + b, 0) / childYs.length;
+    positions[nodeId] = { x: depth * LEVEL_W, y, depth, hasChildren: true, hiddenCount: 0 };
+    return y;
+  }
+
+  place(root, 0);
+  const maxRow = rowCursor;
+  return { positions, maxRow };
+}
+
+function el(tag, attrs, ...kids) {
+  const e = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  kids.forEach((k) => k && e.appendChild(k));
+  return e;
+}
+
+function renderIsland(island, catVar) {
+  const { positions, maxRow } = layoutIsland(island);
+  const ids = Object.keys(positions);
+  const maxDepth = Math.max(...ids.map((id) => positions[id].depth));
+  const width = (maxDepth + 1) * LEVEL_W + 40;
+  const height = Math.max(maxRow * ROW_H, ROW_H);
+
+  const svg = el("svg", { width, height, viewBox: `0 0 ${width} ${height}` });
+  const linkLayer = el("g");
+  const nodeLayer = el("g");
+  svg.appendChild(linkLayer);
+  svg.appendChild(nodeLayer);
+
+  // links
+  for (const id of ids) {
+    const kids = island.children[id] || [];
+    if (state.collapsedHubs.has(id)) continue;
+    for (const kid of kids) {
+      const a = positions[id], b = positions[kid];
+      const midX = (a.x + b.x) / 2;
+      const d = `M ${a.x + R_HUB} ${a.y} C ${midX} ${a.y}, ${midX} ${b.y}, ${b.x - R_LEAF} ${b.y}`;
+      linkLayer.appendChild(el("path", { class: "node-link", d }));
+    }
+  }
+
+  // nodes
+  for (const id of ids) {
+    const p = positions[id];
+    const isRoot = id === island.root;
+    const r = isRoot ? R_ROOT : (p.hasChildren ? R_HUB : R_LEAF);
+    const g = el("g", { "data-node-id": id });
+
+    const circle = el("circle", {
+      class: "node-circle " + (p.hasChildren ? "hub" : "leaf"),
+      cx: p.x, cy: p.y, r,
+      style: `stroke:var(${catVar})`,
+    });
+    if (p.hasChildren) {
+      circle.addEventListener("click", () => toggleHub(id));
+    }
+    g.appendChild(circle);
+
+    if (p.hiddenCount > 0) {
+      g.appendChild(el("text", { class: "node-badge", x: p.x, y: p.y }, document.createTextNode(String(p.hiddenCount))));
+    }
+
+    const label = el("text", {
+      class: "node-label " + (p.hasChildren ? "hub" : "leaf"),
+      x: p.x + r + 7,
+      y: p.y,
+      "dominant-baseline": "central",
+      style: `fill:${p.hasChildren ? "var(--text)" : "var(--text-dim)"}`,
+    }, document.createTextNode(id + (p.hiddenCount > 0 ? ` (+${p.hiddenCount})` : "")));
+    if (p.hasChildren) label.addEventListener("click", () => toggleHub(id));
+    g.appendChild(label);
+
+    nodeLayer.appendChild(g);
+  }
+
+  return svg;
+}
+
+function toggleHub(id) {
+  if (state.collapsedHubs.has(id)) state.collapsedHubs.delete(id);
+  else state.collapsedHubs.add(id);
+  renderAll();
+}
+
+function toggleCategory(cat) {
+  if (state.openCategories.has(cat)) state.openCategories.delete(cat);
+  else state.openCategories.add(cat);
+  renderAll();
+}
+
+function renderCategories() {
+  const root = document.getElementById("categories");
+  root.innerHTML = "";
+  for (const catName of Object.keys(TREE.categories)) {
+    const info = TREE.categories[catName];
+    const catVar = CAT_COLOR_VAR[catName];
+    const open = state.openCategories.has(catName);
+
+    const wrap = document.createElement("div");
+    wrap.className = "category" + (open ? " open" : "");
+
+    const header = document.createElement("button");
+    header.className = "cat-header";
+    header.innerHTML = `
+      <span class="cat-dot" style="background:var(${catVar})"></span>
+      <span class="cat-name">${catName}</span>
+      <span class="cat-count">${info.count} notes</span>
+      <span class="cat-chevron">&#9656;</span>
+    `;
+    header.addEventListener("click", () => toggleCategory(catName));
+    wrap.appendChild(header);
+
+    const body = document.createElement("div");
+    body.className = "cat-body";
+    const bodyInner = document.createElement("div");
+    bodyInner.className = "cat-body-inner";
+    const islandsWrap = document.createElement("div");
+    islandsWrap.className = "islands";
+
+    if (open) {
+      for (const island of info.islands) {
+        const islandDiv = document.createElement("div");
+        islandDiv.className = "island";
+        islandDiv.appendChild(renderIsland(island, catVar));
+        islandsWrap.appendChild(islandDiv);
+      }
+    }
+
+    bodyInner.appendChild(islandsWrap);
+    body.appendChild(bodyInner);
+    wrap.appendChild(body);
+    root.appendChild(wrap);
+  }
+}
+
+function nodeIsVisible(id) {
+  for (const catName of Object.keys(TREE.categories)) {
+    const info = TREE.categories[catName];
+    if (!state.openCategories.has(catName)) continue;
+    for (const island of info.islands) {
+      if (!(id in island.parent)) continue;
+      // walk up ancestor chain; if any ancestor (excluding self) is collapsed, hidden
+      let cur = island.parent[id];
+      while (cur !== null && cur !== undefined) {
+        if (state.collapsedHubs.has(cur)) return false;
+        cur = island.parent[cur];
+      }
+      return true;
+    }
+  }
+  return false;
+}
+
+function updateCrossLinks() {
+  const overlay = document.getElementById("crossOverlay");
+  overlay.innerHTML = "";
+  const pageRect = document.getElementById("page").getBoundingClientRect();
+
+  for (const edge of TREE.crossEdges) {
+    if (!nodeIsVisible(edge.source) || !nodeIsVisible(edge.target)) continue;
+    const elA = document.querySelector(`[data-node-id="${CSS.escape(edge.source)}"] circle`);
+    const elB = document.querySelector(`[data-node-id="${CSS.escape(edge.target)}"] circle`);
+    if (!elA || !elB) continue;
+    const ra = elA.getBoundingClientRect();
+    const rb = elB.getBoundingClientRect();
+    const ax = ra.left + ra.width / 2 - pageRect.left;
+    const ay = ra.top + ra.height / 2 - pageRect.top;
+    const bx = rb.left + rb.width / 2 - pageRect.left;
+    const by = rb.top + rb.height / 2 - pageRect.top;
+    const midY = (ay + by) / 2;
+    const d = `M ${ax} ${ay} C ${ax} ${midY}, ${bx} ${midY}, ${bx} ${by}`;
+    overlay.appendChild(el("path", { class: "cross-link", d }));
+  }
+}
+
+function renderStats() {
+  const totalNodes = Object.values(TREE.categories).reduce((s, c) => s + c.count, 0);
+  const totalEdges = Object.values(TREE.categories).reduce((s, c) => s + c.islands.reduce((s2, isl) => s2 + Object.keys(isl.parent).length - 1, 0), 0) + TREE.crossEdges.length;
+  document.getElementById("statsRow").innerHTML = `<div><b>${totalNodes}</b> notes</div><div><b>${totalEdges}</b> links</div>`;
+}
+
+function renderAll() {
+  renderCategories();
+  requestAnimationFrame(() => {
+    updateCrossLinks();
+    setTimeout(updateCrossLinks, 360);
+  });
+}
+
+renderStats();
+renderAll();
+window.addEventListener("resize", updateCrossLinks);
+</script>

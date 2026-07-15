@@ -4,7 +4,7 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 
 ## Knowledge Graph
 
-![Knowledge Graph](Graph/graph.png)
+[Open the interactive Knowledge Graph Explorer](Graph/graph-explorer.html) — download and open `Graph/graph-explorer.html` in a browser to browse notes by category, with collapsible hub nodes.
 
 ## Contents
 
@@ -40,6 +40,7 @@ A personal knowledge base covering AI and Cloud concepts, built with Obsidian.
 - **Glue** — Serverless data integration and ETL on AWS
 - **Amazon Transcribe** — Automatic speech recognition service on AWS
 - **Amazon Polly** — Text-to-speech service on AWS
+- **Amazon EC2** — Resizable virtual server compute on AWS
 
 ### System Design
 - **RAG Architecture** — End-to-end RAG system architecture

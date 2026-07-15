@@ -179,19 +179,9 @@
               "icon": "lucide-list",
               "title": "Outline of RAGComponents"
             }
-          },
-          {
-            "id": "a9fd03b0c1d916bb",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw-sidepanel",
-              "state": {},
-              "icon": "excalidraw-icon",
-              "title": "Excalidraw Sidepanel"
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -212,8 +202,11 @@
   },
   "active": "c20bd39bb51f8659",
   "lastOpenFiles": [
-    "SYSTEMDESIGN/RAG/RAGArchitecture.md",
+    "Graph/graph-explorer.html",
+    "Graph",
+    "CLOUD-CONCEPTS/Amazon EC2.md",
     "SYSTEMDESIGN/RAG/RAGComponents.md",
+    "SYSTEMDESIGN/RAG/RAGArchitecture.md",
     "SYSTEMDESIGN/RAG/Step2-Retrieval-Re-Ranking.png",
     "SYSTEMDESIGN/RAG/Step1-Embed-SematicSpace.png",
     "SYSTEMDESIGN/RAG/RAGComponents.png",
@@ -229,7 +222,6 @@
     "Graph/graph.png",
     "SYSTEMDESIGN/RAG/RAGArchitecture.png.md",
     "SYSTEMDESIGN/RAG",
-    "Graph",
     "AI-CONCEPTS/PEFT.md",
     "AI-CONCEPTS/LoRA and QLoRA.md",
     "SYSTEMDESIGN",
