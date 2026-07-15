@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "11621f49dabcbd50",
+        "id": "1ca92fd62af3664b",
         "type": "tabs",
         "children": [
           {
-            "id": "45b084b39016b9e4",
+            "id": "c05ca25bf2f29785",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI-CONCEPTS/LoRA and QLoRA.md",
+                "file": "AI-CONCEPTS/Agentic Design Patterns.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LoRA and QLoRA"
-            }
-          },
-          {
-            "id": "c20bd39bb51f8659",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "SYSTEMDESIGN/RAG/RAGComponents.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "RAGComponents"
+              "title": "Agentic Design Patterns"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -68,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Fine-tuning",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -171,17 +156,27 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SYSTEMDESIGN/RAG/RAGComponents.md",
+                "file": "AI-CONCEPTS/LoRA and QLoRA.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of RAGComponents"
+              "title": "Outline of LoRA and QLoRA"
+            }
+          },
+          {
+            "id": "a9fd03b0c1d916bb",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw-sidepanel",
+              "state": {},
+              "icon": "excalidraw-icon",
+              "title": "Excalidraw Sidepanel"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -200,41 +195,50 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c20bd39bb51f8659",
+  "active": "c05ca25bf2f29785",
   "lastOpenFiles": [
-    "Graph/graph-explorer.html",
-    "Graph",
-    "CLOUD-CONCEPTS/Amazon EC2.md",
-    "SYSTEMDESIGN/RAG/RAGComponents.md",
-    "SYSTEMDESIGN/RAG/RAGArchitecture.md",
-    "SYSTEMDESIGN/RAG/Step2-Retrieval-Re-Ranking.png",
-    "SYSTEMDESIGN/RAG/Step1-Embed-SematicSpace.png",
-    "SYSTEMDESIGN/RAG/RAGComponents.png",
-    "SYSTEMDESIGN/RAG/RAGArchitecture.png",
-    "SYSTEMDESIGN/RAG/RAG-Pipeline-Algorithms.png",
-    "SYSTEMDESIGN/RAG/RAG-Pipeline-Algorithms.md",
-    "README.md",
-    "SYSTEMDESIGN/RAG/Step2-Retrieval-Re-Ranking.md",
-    "SYSTEMDESIGN/RAG/Step1-Embed-SemanticSpace.md",
-    "AI-CONCEPTS/RAG.md",
-    "AI-CONCEPTS/AgenticRAG.md",
-    "AI-CONCEPTS/GraphRAG.md",
+    "AI-CONCEPTS/AI Agent.md",
+    "AI-CONCEPTS/Agentic Design Patterns.md",
+    "AI-CONCEPTS/Hybrid Retrieval.md",
     "Graph/graph.png",
-    "SYSTEMDESIGN/RAG/RAGArchitecture.png.md",
-    "SYSTEMDESIGN/RAG",
-    "AI-CONCEPTS/PEFT.md",
-    "AI-CONCEPTS/LoRA and QLoRA.md",
-    "SYSTEMDESIGN",
-    "AI-CONCEPTS/FINE-TUINING.md",
-    "AI-CONCEPTS/RAG vs FINE-TUNING vs PROMPT ENGINEERING.md",
+    "AI-CONCEPTS/Agent Development Kit(ADK).md",
+    "AI-CONCEPTS/RAG.md",
+    "AI-CONCEPTS/LangChain.md",
+    "AI-CONCEPTS/Models.md",
+    "AI-CONCEPTS/Long Context.md",
+    "AI-CONCEPTS/Prompt Chaining.md",
     "AI-CONCEPTS/PROMPT ENGINEERING.md",
-    "CLOUD-CONCEPTS/FINE-TUNING.md",
-    "AI-CONCEPTS",
-    "CLOUD-CONCEPTS",
-    "CLOUD-CONCEPTS/BEDROCK SERVICES.md",
-    "CLOUD-CONCEPTS/LoRA.md",
-    "CLOUD-CONCEPTS/CONVERSE API.md",
+    "AI-CONCEPTS/Chain of Thought(CoT).md",
+    "AI-CONCEPTS/ReAct.md",
+    "Graph/graph.png",
+    "Chain of Thought (CoT).md",
+    "AI-CONCEPTS/Prompt Evaluations.md",
+    "AI-CONCEPTS/AgenticRAG.md",
+    "SYSTEMDESIGN/CoT.png",
+    "SYSTEMDESIGN/Prompts/Prompt Evaluations.png",
+    "SYSTEMDESIGN/Model Parameters/Temperature.png",
+    "AI-CONCEPTS/RAG vs FINE-TUNING vs PROMPT ENGINEERING vs Long Context.md",
+    "AI-CONCEPTS/FINE-TUINING.md",
+    "AI-CONCEPTS/Model Parameters.md",
+    "AI-CONCEPTS/Top K.md",
+    "AI-CONCEPTS/Top P.md",
+    "AI-CONCEPTS/Temperature.md",
+    "CLOUD-CONCEPTS/Amazon OpenSearch.md",
     "CLOUD-CONCEPTS/AWS.md",
-    "CLOUD-CONCEPTS/SAGEMAKER.md"
+    "CLOUD-CONCEPTS/Amazon Comprehend.md",
+    "SYSTEMDESIGN/Prompts",
+    "CLOUD-CONCEPTS/Amazon Polly.md",
+    "SYSTEMDESIGN/Model Parameters/Temperature Ranges.png",
+    "SYSTEMDESIGN/Model Parameters",
+    "Screenshot 2026-05-12 at 11.43.42 AM.png",
+    "SYSTEMDESIGN/RAG/SVG/RAGComponents.png",
+    "SYSTEMDESIGN/RAG/SVG/Step1-Embed-SematicSpace.png",
+    "SYSTEMDESIGN/RAG/SVG/Step2-Retrieval-Re-Ranking.png",
+    "SYSTEMDESIGN/RAG/SVG",
+    "SYSTEMDESIGN/RAG",
+    "Graph",
+    "SYSTEMDESIGN",
+    "AI-CONCEPTS",
+    "CLOUD-CONCEPTS"
   ]
 }
